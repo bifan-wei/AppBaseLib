@@ -10,7 +10,7 @@ public abstract class UiMessageView implements IUiView {
 	protected View RootView;
 	protected Context context;
 
-	 UiMessageView(Context context) {
+	 public UiMessageView(Context context) {
 		this.context = context;
 	}
 

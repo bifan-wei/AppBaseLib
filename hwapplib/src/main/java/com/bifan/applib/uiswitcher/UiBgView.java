@@ -9,7 +9,7 @@ public abstract class UiBgView  implements IUiView {
 	private View RootView;
 	private Context context;
 
-	 UiBgView(Context context) {
+	public UiBgView(Context context) {
 		this.context = context;
 	}
 

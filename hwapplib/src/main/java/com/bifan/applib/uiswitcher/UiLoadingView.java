@@ -11,7 +11,7 @@ public abstract class UiLoadingView implements IUiView {
     protected Context context;
     protected ImageView Pic;
 
-    UiLoadingView(Context context) {
+    public UiLoadingView(Context context) {
         this.context = context;
     }
 
