@@ -17,9 +17,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
-import com.lancoo.iotdevice.R;
-
-
+import com.bifan.applib.R;
 
 public class CircleImageView extends AppCompatImageView {
 

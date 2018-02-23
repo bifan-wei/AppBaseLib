@@ -48,12 +48,12 @@ import java.util.regex.Pattern;
  * <p/>
  * <ol>
  * <li> You need a {@link ViewGroup.LayoutParams} subclass in your ViewGroup that implements
- * {@link com.zhy.android.percent.support.PercentLayoutHelper.PercentLayoutParams}.
+ * {@link com}.
  * <li> In your {@code LayoutParams(Context c, AttributeSet attrs)} constructor create an instance
  * of {@link PercentLayoutInfo} by calling
  * {@link PercentLayoutHelper#getPercentLayoutInfo(Context, AttributeSet)}. Return this
  * object from {@code public PercentLayoutHelper.PercentLayoutInfo getPercentLayoutInfo()}
- * method that you implemented for {@link com.zhy.android.percent.support.PercentLayoutHelper.PercentLayoutParams} interface.
+ * method that you implemented for {@link com} interface.
  * <li> Override
  * {@link ViewGroup.LayoutParams#setBaseAttributes(TypedArray, int, int)}
  * with a single line implementation {@code PercentLayoutHelper.fetchWidthAndHeight(this, a,
