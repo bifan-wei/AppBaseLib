@@ -2,61 +2,70 @@ package com.bifan.applib.weidges;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.bifan.applib.R;
+
 
 public class CircleView extends View {
+    private Paint mPaint;
+    private float Radius = 0.0F;
+    private int CoverColor = Color.parseColor("#66ffffff");
 
     public CircleView(Context context) {
         super(context);
-        init();
+        this.init();
     }
 
     public CircleView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init();
+        getAttrs(attrs);
+        this.init();
     }
 
     public CircleView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init();
+        getAttrs(attrs);
+        this.init();
     }
 
-    private Paint mPaint;
-    private float Radius = 0;
-    private int CoverColor = Color.parseColor("#66ffffff");
-
+    private void getAttrs(AttributeSet attrs) {
+        TypedArray ta = getContext().obtainStyledAttributes(attrs, R.styleable.CircleView);
+        Radius = ta.getDimension(R.styleable.CircleView_CircleRadius, Radius);
+        CoverColor = ta.getColor(R.styleable.CircleView_BgColor, CoverColor);
+        ta.recycle();
+    }
 
     private void init() {
-        mPaint = new Paint();
-        mPaint.setAntiAlias(true);
-        mPaint.setColor(CoverColor);
+        this.mPaint = new Paint();
+        this.mPaint.setAntiAlias(true);
+        this.mPaint.setColor(this.CoverColor);
+
     }
 
     public void setCoverColor(int CoverColor) {
         this.CoverColor = CoverColor;
-        mPaint.setColor(CoverColor);
-        postInvalidate();
+        this.mPaint.setColor(CoverColor);
+        this.postInvalidate();
     }
 
-    @SuppressLint("DrawAllocation")
-    @Override
+    @SuppressLint({"DrawAllocation"})
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        int vWidth = getWidth();
-        int vHeight = getHeight();
-
+        int vWidth = this.getWidth();
+        int vHeight = this.getHeight();
         int radius = Math.max(vHeight, vWidth) / 2;
-
-        float Cx = vWidth / 2;
-        float Cy = vHeight / 2;
-
-        canvas.drawCircle(Cx, Cy, radius, mPaint);
-
+        if (Radius > 0) {
+            radius = (int) Radius;
+        }
+        float Cx = (float) (vWidth / 2);
+        float Cy = (float) (vHeight / 2);
+        canvas.drawCircle(Cx, Cy, (float) radius, this.mPaint);
     }
 
 }

@@ -14,6 +14,89 @@ import java.io.IOException;
 public class FileUtil {
 
     /**
+     * @param url 本地文件路径，没有后缀名，返回空字符
+     * @return
+     */
+    public static String getLocalFileExtension(String url) {
+        File file = new File(url);
+        if (file.exists()) {
+            String fileName = file.getName();
+            if (!fileName.contains(".")) {
+                return "";
+            }
+            return fileName.substring(fileName.lastIndexOf(".") + 1);
+        }
+        return "";
+    }
+
+    /**
+     * 通过递归获取文件夹大小
+     *
+     * @param path
+     * @return 获取文件夹大小
+     */
+    public static long getDirectorySize(String path) {
+        if (path != null && path.length() > 0) {
+            File file = new File(path);
+            if (file.exists()) {
+                if (file.isDirectory()) {
+                    File[] files = file.listFiles();
+                    long size = 0;
+                    for (File f : files) {
+                        if (f.exists()) {
+                            if (f.isDirectory()) {
+                                size += getDirectorySize(f.getAbsolutePath());
+                            } else {
+                                size += f.length();
+                            }
+                        }
+                    }
+                    return size;
+
+                } else {
+                    return file.length();
+                }
+            }
+
+        }
+        return 0;
+    }
+
+    /**
+     * 通过递归删除文件夹下的文件
+     *
+     * @param path
+     * @return
+     */
+    public static void deleteDirectoryFiles(String path) {
+        if (path != null && path.length() > 0) {
+            File file = new File(path);
+            if (file.exists()) {
+                if (file.isDirectory()) {
+                    File[] files = file.listFiles();
+
+                    for (File f : files) {
+                        if (f.exists()) {
+                            if (f.isDirectory()) {
+                                deleteDirectoryFiles(f.getAbsolutePath());
+                            } else {
+                                f.delete();
+                            }
+                        }
+                    }
+
+
+                } else {
+                    file.delete();
+                }
+            }
+
+        }
+    }
+
+
+
+    /**
      * @param byteSize 字节大小
      * @return 字节大小转化为显示字符，小于MB的计算KB,大于1MB的计算MB
      */

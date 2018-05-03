@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public abstract class BaseActivity extends AppCompatActivity {
     private Toast mToast = null;
-    private Boolean IsActivityDestroyed = false;
+    protected Boolean IsActivityDestroyed = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

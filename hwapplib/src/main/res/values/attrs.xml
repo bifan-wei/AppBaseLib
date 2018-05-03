@@ -71,4 +71,23 @@
         <attr name="isChangeBorder" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="CircleView">
+        <attr name="CircleRadius" format="dimension" />
+        <attr name="BgColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingView">
+        <attr name="loading_renderer">
+            <!--circle rotate-->
+            <enum name="LevelLoadingRenderer" value="1" />
+            <enum name="ElectricFanLoadingRenderer" value="9" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="SwipeItemLayout.Layout">
+        <attr name="layout_itemType">
+            <flag name="main" value="0x01" />
+            <flag name="menu" value="0x02" />
+        </attr>
+    </declare-styleable>
 </resources>

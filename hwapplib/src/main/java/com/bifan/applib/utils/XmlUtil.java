@@ -168,7 +168,7 @@ public class XmlUtil {
      * @param xmlStr     字符串
      * @param objectType 对应的数据结构体
      * @return objectType传入错误或导致IllegalAccessException，
-     * objectType 与xmlStr的属性不对应会返回new出来的objecttype
+     * objectType 与xmlStr的属性不对应会返回new出来的objectType
      * objectType 与xmlStr的属性运行忽略掉大小写
      * <p>
      * -------------------- TODO 从单个xml格式数据中获取返回bean

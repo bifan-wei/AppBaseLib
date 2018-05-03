@@ -7,6 +7,7 @@ public class DataUtil {
     public static int size(Collection collection){
         return collection == null ? 0 : collection.size();
     }
+
     public static Boolean isNull(Object... objects) {
         if (objects.length == 0) {
             return true;

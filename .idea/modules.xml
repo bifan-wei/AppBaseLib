@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/AppBaseLib.iml" filepath="$PROJECT_DIR$/AppBaseLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/hwapplib/hwapplib.iml" filepath="$PROJECT_DIR$/hwapplib/hwapplib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hwmediaplayer/hwmediaplayer.iml" filepath="$PROJECT_DIR$/hwmediaplayer/hwmediaplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vlclib2.5.17/vlclib2.5.17.iml" filepath="$PROJECT_DIR$/vlclib2.5.17/vlclib2.5.17.iml" />
     </modules>
   </component>
 </project>

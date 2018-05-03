@@ -27,7 +27,6 @@ public class NetworkStateUtil {
 		return NETWORK_STATE_NOT_INTERNET;
 	}
 
-	
 	public static Boolean HasNet(Context context0){
 		return getNetworkState(context0)!=NETWORK_STATE_NOT_INTERNET;
 	}

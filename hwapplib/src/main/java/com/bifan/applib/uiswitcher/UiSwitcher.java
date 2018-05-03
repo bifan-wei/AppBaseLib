@@ -1,12 +1,10 @@
 package com.bifan.applib.uiswitcher;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 
 public class UiSwitcher extends RelativeLayout implements IUiSwitcher {
-
     private IUiView mBgView;
     private IUiView mLoadingView;
     private IUiView mMessageView;
@@ -34,13 +32,8 @@ public class UiSwitcher extends RelativeLayout implements IUiSwitcher {
         init();
     }
 
-    @SuppressLint("NewApi")
-    public UiSwitcher(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
 
-    private void init() {
+    protected void init() {
 
     }
 
@@ -87,7 +80,6 @@ public class UiSwitcher extends RelativeLayout implements IUiSwitcher {
                 } else {//说明不可见，执行动画
                     CancelLoadingViewAnimation();
                     mLoadingView.ShowWithAnimation();
-                    //mMessageView.HideRightNow();
                 }
             }
 

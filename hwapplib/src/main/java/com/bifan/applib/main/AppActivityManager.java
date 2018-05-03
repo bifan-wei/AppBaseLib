@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class AppActivityManager {
 	private static final AppActivityManager a = new AppActivityManager();
-	private static final List<AppCompatActivity> mActivities = new ArrayList<AppCompatActivity>();
+	private static final List<AppCompatActivity> mActivities = new ArrayList<>();
 
 	public static AppActivityManager getInstance(){
 		return a;
@@ -53,4 +53,7 @@ public class AppActivityManager {
 		mActivities.clear();
 	}
 
+	public static List<AppCompatActivity> getActivities() {
+		return mActivities;
+	}
 }

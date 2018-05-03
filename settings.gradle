@@ -1,1 +1,1 @@
-include ':app', ':hwapplib'
+include ':app', ':hwapplib', ':vlclib2.5.17', ':hwmediaplayer'
